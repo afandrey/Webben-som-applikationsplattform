@@ -1,7 +1,23 @@
-<h1>Welcome</h1>
-<h2>Control LED light</h2>
+<h1>Raspberry Pi Alarm</h1>
 
-<label class="switch">
-    <input type="checkbox" id="light">
-    <span class="slider round"></span>
-</label>
+<br>
+
+<div id="alarm">
+	<strong>Alarm on/off</strong>
+	<br>
+	<label class="switch">
+	    <input type="checkbox" id="alarmBtn">
+    	<span class="slider round"></span>
+	</label>
+</div>
+
+<span class="blink text-danger"><h3 id="alarmText"></h3></span>
+
+<br>
+
+<div id="infobox" class="col-md-4 mx-auto">
+	<div class="alert alert-info">
+		<strong>{{data}}</strong>
+	</div>
+</div>
+

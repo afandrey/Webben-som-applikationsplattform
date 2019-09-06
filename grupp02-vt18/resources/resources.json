@@ -1,0 +1,120 @@
+{
+	"pi": {
+		"name": "Alarm WoT Pi",
+		"description": "A simple WoT-connected Raspberry Pi for the WoT book.",
+		"port": 8484,
+		"links": {
+			"sensors": {
+				"link": "http://c0eea0f2.ngrok.io/pi/sensors",
+				"title": "List of sensors"
+			},
+			"actuators": {
+				"link": "http://c0eea0f2.ngrok.io/pi/actuators",
+				"title": "List of actuators"
+			},
+			"actions": {
+				"link": "http://c0eea0f2.ngrok.io/pi/actions",
+				"title": "List of actions"
+			},
+			"self": {
+				"link": "http://c0eea0f2.ngrok.io/pi",
+				"title": "Self"
+			},
+			"ui": {
+				"link": "http://c0eea0f2.ngrok.io/pi/ui",
+				"title": "User Interface"
+			}
+		},
+		"sensors": {
+			"name": "Sensors",
+			"description": "List all available sensors",
+			"links": {
+				"self": "http://c0eea0f2.ngrok.io/pi/sensors",
+				"previous": "http://c0eea0f2.ngrok.io/pi",
+				"pir": "http://c0eea0f2.ngrok.io/pi/sensors/pir"
+			},
+			"pir": {
+				"name": "Passive Infrared",
+				"description": "A passive infrared sensor. When 'true' someone is present.",
+				"links": {
+					"self": "http://c0eea0f2.ngrok.io/pi/sensors/pir",
+					"previous": "http://c0eea0f2.ngrok.io/pi/sensors"
+				},
+				"value": true,
+				"gpio": 17
+			}
+		},
+		"actuators": {
+			"name": "Actuators",
+			"description": "List all available actuators",
+			"links": {
+				"self": "http://c0eea0f2.ngrok.io/pi/actuators",
+				"leds": "http://c0eea0f2.ngrok.io/pi/actuators/leds",
+				"button": "http://c0eea0f2.ngrok.io/pi/actuators/button",
+				"previous": "http://c0eea0f2.ngrok.io/pi"
+			},
+			"leds": {
+				"name": "LEDs",
+				"description": "List all available leds",
+				"links": {
+					"self": "http://c0eea0f2.ngrok.io/pi/actuators/leds",
+					"previous": "http://c0eea0f2.ngrok.io/pi/actuators",
+					"greenLed": "http://c0eea0f2.ngrok.io/pi/actuators/leds/1",
+					"redLed": "http://c0eea0f2.ngrok.io/pi/actuators/leds/2"
+				},
+				"1": {
+					"name": "LED 1",
+					"description": "LED 1 = Green LED",
+					"links": {
+						"self": "http://c0eea0f2.ngrok.io/pi/actuators/leds/1",
+						"previous": "http://c0eea0f2.ngrok.io/pi/actuators/leds"
+					},
+					"value": false,
+					"gpio": 10
+				},
+				"2": {
+					"name": "LED 2",
+					"description": "LED 2 = Red Led",
+					"links": {
+						"self": "http://c0eea0f2.ngrok.io/pi/actuators/leds/2",
+						"previous": "http://c0eea0f2.ngrok.io/pi/actuators/leds"
+					},
+					"value": false,
+					"gpio": 22
+				}
+			},
+			"button": {
+				"name": "Push Button",
+				"description": "A button to turn the alarm on/off.",
+				"links": {
+					"self": "http://c0eea0f2.ngrok.io/pi/actuators/button",
+					"previous": "http://c0eea0f2.ngrok.io/pi/actuators"
+				},
+				"value": true,
+				"gpio": 27
+			}
+		},
+		"actions": {
+			"name": "Actions",
+			"description": "List of actions",
+			"links": {
+				"self": "http://c0eea0f2.ngrok.io/pi/actions",
+				"previous": "http://c0eea0f2.ngrok.io/pi",
+				"updateGreenLed": "http://c0eea0f2.ngrok.io/pi/actions/updateGreenLed",
+				"updateRedLed": "http://c0eea0f2.ngrok.io/pi/actions/updateRedLed"
+			},
+			"updateGreenLed": {
+				"name": "Update greenLed",
+				"description": "Update the value of the green LED",
+				"link": "http://c0eea0f2.ngrok.io/pi/actuators/leds/1",
+				"value": "boolean"
+			},
+			"updateRedLed": {
+				"name": "Update redLed",
+				"description": "Update the value of the red LED",
+				"link": "http://c0eea0f2.ngrok.io/pi/actuators/leds/2",
+				"value": "boolean"
+			}
+		}
+	}
+}

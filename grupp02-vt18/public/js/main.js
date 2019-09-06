@@ -1,13 +1,25 @@
-let socket = io()
+let socket = io();
 
-window.addEventListener('load', function () { // when page loads
-    let lightbox = this.document.getElementById('light')
-    lightbox.addEventListener('change', function () { // add event listener for when checkbox changes
-        socket.emit('light', Number(this.checked)) // send button status to server (as 1 or 0)
-    })
-})
+let alarmBtn = document.getElementById('alarmBtn');
+alarmBtn.addEventListener('change', function() { // add event listener for when alarmBtn checkbox changes
+	socket.emit('alarmBtn', Number(this.checked)); // send button status to server as 0 (off) or 1 (on)
+});
 
-socket.on('light', function (data) { // get button status from client
-    document.getElementById('light').checked = data // change checkbox according to push button on Raspberry Pi
-    socket.emit('light', data) // send push button status back to server
-})
+socket.on('alarmBtn', function(data) { // get button status from client
+    document.getElementById('alarmBtn').checked = data; // change checkbox according to push button on Raspberry Pi
+    socket.emit('alarmBtn', data); // send push button status back to server
+});
+
+// send the text to UI if the alarm went off
+socket.on('alarmText', function (data) {
+	console.log(data);
+	let h3 = document.getElementById('alarmText');
+	let message = document.createTextNode('Intruder alert!');
+	let child = h3.childNodes[0];
+
+	if (data === 1) {
+		h3.appendChild(message);
+	} else if (data === 0) {
+		h3.removeChild(child);
+	}
+});
