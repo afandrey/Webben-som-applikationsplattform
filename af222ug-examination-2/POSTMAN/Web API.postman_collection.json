@@ -1,0 +1,406 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Web API",
+		"_postman_id": "bb363ec2-2676-de54-373c-b5b78ea431e3",
+		"description": "This is a collection for my Web API, in the course 1dv527.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "{{BASE_URL}}",
+			"request": {
+				"url": "{{BASE_URL}}",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "Starting point of API."
+			},
+			"response": []
+		},
+		{
+			"name": "{{BASE_URL}}{{USERS_URL}}",
+			"request": {
+				"url": "{{BASE_URL}}{{USERS_URL}}",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "Route to get all users."
+			},
+			"response": []
+		},
+		{
+			"name": "{{BASE_URL}}{{USERS_URL}}",
+			"request": {
+				"url": "{{BASE_URL}}{{USERS_URL}}",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": "Register user - no input."
+			},
+			"response": []
+		},
+		{
+			"name": "{{BASE_URL}}{{USERS_URL}}",
+			"request": {
+				"url": "{{BASE_URL}}{{USERS_URL}}",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "Alva",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "thisisapassword",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": "Register new user."
+			},
+			"response": []
+		},
+		{
+			"name": "{{BASE_URL}}{{USERS_URL}}{{AUTH_URL}}",
+			"request": {
+				"url": "{{BASE_URL}}{{USERS_URL}}{{AUTH_URL}}",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "Alva",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "thisisapassword",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": "Authentication to get Token."
+			},
+			"response": []
+		},
+		{
+			"name": "{{BASE_URL}}{{USERS_URL}}{{AUTH_URL}}",
+			"request": {
+				"url": "{{BASE_URL}}{{USERS_URL}}{{AUTH_URL}}",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "Alva",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "thisisapass",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": "Authentication with wrong password."
+			},
+			"response": []
+		},
+		{
+			"name": "{{BASE_URL}}{{CATCHES_URL}}",
+			"request": {
+				"url": "{{BASE_URL}}{{CATCHES_URL}}",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "Route to get all catches."
+			},
+			"response": []
+		},
+		{
+			"name": "{{BASE_URL}}{{CATCHES_URL}}",
+			"request": {
+				"url": "{{BASE_URL}}{{CATCHES_URL}}",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					},
+					{
+						"key": "x-access-token",
+						"value": "{{token}}",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "Alva",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "longitude",
+							"value": "1",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "latitude",
+							"value": "2",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "species",
+							"value": "Salmon",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "weight",
+							"value": "1",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "length",
+							"value": "22",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "imageUrl",
+							"value": "salmon.png",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "method",
+							"value": "angling",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "nice fish",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": "Creating new catch."
+			},
+			"response": []
+		},
+		{
+			"name": "{{BASE_URL}}{{CATCHES_URL}}/{{id}}",
+			"request": {
+				"url": "{{BASE_URL}}{{CATCHES_URL}}/{{id}}",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "Get specfic catch."
+			},
+			"response": []
+		},
+		{
+			"name": "{{BASE_URL}}{{CATCHES_URL}}/{{id}}",
+			"request": {
+				"url": "{{BASE_URL}}{{CATCHES_URL}}/5acf1fd18708cf332cba93ed",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					},
+					{
+						"key": "x-access-token",
+						"value": "{{token}}",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "species",
+							"value": "perch",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "Alva",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "longitude",
+							"value": "2",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "latitude",
+							"value": "3",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "weight",
+							"value": "3",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "length",
+							"value": "11",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "imageUrl",
+							"value": "perch.png",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "method",
+							"value": "angling",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "heavy fish",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": "Update data for specific catch"
+			},
+			"response": []
+		},
+		{
+			"name": "{{BASE_URL}}{{CATCHES_URL}}/{{id}}",
+			"request": {
+				"url": "{{BASE_URL}}{{CATCHES_URL}}/{{id}}",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					},
+					{
+						"key": "x-access-token",
+						"value": "{{token}}",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "species",
+							"value": "trout",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": "Updating data for specific catch."
+			},
+			"response": []
+		},
+		{
+			"name": "{{BASE_URL}}{{WEBHOOKS_URL}}",
+			"request": {
+				"url": "{{BASE_URL}}{{WEBHOOKS_URL}}",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "Route to get all webhooks"
+			},
+			"response": []
+		},
+		{
+			"name": "{{BASE_URL}}{{WEBHOOKS_URL}}",
+			"request": {
+				"url": "{{BASE_URL}}{{WEBHOOKS_URL}}",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					},
+					{
+						"key": "x-access-token",
+						"value": "{{token}}",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "url",
+							"value": "http://www.example.com/webhook",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": "Creating a webhook."
+			},
+			"response": []
+		}
+	]
+}
