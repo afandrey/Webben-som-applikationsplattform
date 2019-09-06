@@ -1,10 +1,9 @@
 # Exam Assignment 2 - Web API
 
 ## Installationsguide
-1. Jag har kört mongoDB lokalt, se därför till att ha mongoDB installerat lokalt och igång.
-2. Installera moduler med _npm install_
-3. Starta API:et med _node app.js_ eller _npm start_
-4. Följ Postman collection för att testa API:et
+1. Installera moduler med _npm install_
+2. Starta API:et med _node app.js_ eller _npm start_
+3. Följ Postman collection för att testa API:et
 
 ## Rapport
 1. How have you implemented the idea of HATEOAS in your API? Motivate your choices and how it support the idea of HATEOAS.  
